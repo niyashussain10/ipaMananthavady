@@ -83,9 +83,9 @@ const PlacementPage = () => {
                   {student.name}
                 </h3>
                 {/*hide airline name in students card if needed*/}
-                {/* <p className="text-accent font-medium text-xs sm:text-sm uppercase tracking-wider mt-1">
-                  Placed at {student.airline}
-                </p> */}
+                <p className="text-accent font-medium text-xs sm:text-sm uppercase tracking-wider mt-1">
+                  {student.airline}
+                </p>
               </div>
             </motion.div>
           ))}

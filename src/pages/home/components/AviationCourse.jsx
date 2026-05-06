@@ -1,26 +1,88 @@
 import React from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import { CheckCircle } from "lucide-react";
 
 export default function AviationCourses() {
+  const navigate = useNavigate();
+  const location = useLocation();
   return (
-    <section className="w-full bg-gray-100 py-16 px-6">
+    <section className="w-full bg-gray-100 pt-16 pb-1 md:pb-16 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Top Content */}
-        <div className="flex flex-col lg:flex-row gap-12 mb-16">
+        <div className="flex flex-col lg:flex-row gap-12 mb-8 md:mb-16 items-start">
           <div className="lg:w-2/3 text-left">
-            <p className="text-sm text-gray-600 mb-3">
+            <p className="text-xs md:text-sm text-gray-600 mb-4 tracking-wide uppercase font-bold opacity-70">
               Sara Institute of Aviation & Hospitality
             </p>
 
-            <h2 className="text-sm md:text-2xl font-medium text-gray-900 leading-relaxed font-outfit">
-              Sara Institute of Aviation & Hospitality, Bangalore, is a premier training institute committed to shaping the next generation of aviation and hospitality professionals. With a strong focus on industry-relevant skills, practical training, and personality development, we equip students with the knowledge and confidence required to excel in airlines, airports, and global hospitality sectors. Our experienced faculty, modern training approach, and dedicated placement support ensure that every student is prepared to step into a successful and rewarding career.
+            <h2 className="text-xl md:text-2xl font-normal text-gray-900 leading-snug md:leading-relaxed font-outfit">
+            Sara Institute of Aviation & Hospitality is a <span className="font-bold text-accent underline underline-offset-4 decoration-2 decoration-accent/40">premier</span> training institute dedicated to preparing future aviation and hospitality professionals. Through industry-focused training, practical learning, personality development, and placement support, the institute equips students with the skills and confidence needed for successful careers in airlines, airports and the hospitality industry. <br />
+            {location.pathname === "/" && (
+              <button onClick={() => navigate("/about")} className="text-blue-700 underline cursor-pointer  text-md font-bold">
+            Know More
+              </button>
+            )}
             </h2>
 
-            {/* <a href="#" className="text-blue-600 mt-4 inline-block font-medium hover:underline transition-all">
-              Know More
-            </a> */}
+            {location.pathname === '/about' && (
+            <div className="mt-12 md:mt-16 space-y-8">
+              <h3 className="text-lg md:text-xl font-bold text-gray-900 uppercase tracking-wider border-l-4 border-accent pl-4">
+                Why SARA Aviation?
+              </h3>
+ 
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8">
+                {[
+                  { title: "Launch Your Aviation Career", desc: "Our programs prepare you for real opportunities in the fast-growing aviation industry." },
+                  { title: "Learn from Industry Experts", desc: "Get trained by experienced professionals who bring real-world insights into the classroom." },
+                  { title: "Job-Ready Skills from Day One", desc: "We focus on practical training, communication, and personality development." },
+                  { title: "Focus on Student Success", desc: "Personalized guidance, mentoring, and continuous support throughout your journey." },
+                  { title: "Professional Grooming", desc: "Master the confidence, etiquette, and presentation skills required for aviation roles." },
+                  { title: "Real-World Exposure", desc: "Training that simulates real aviation environments for hands-on experience." },
+                  { title: "Strong Career Support", desc: "Assistance with interview prep, resume building, and career guidance." },
+                  { title: "Trusted by Students & Parents", desc: "A growing reputation for quality training and successful student outcomes." }
+                ].map((item, idx) => (
+                  <div key={idx} className="flex gap-4 group">
+                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-all duration-300">
+                      <CheckCircle size={16} />
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-bold text-gray-900 mb-1">{item.title}</h4>
+                      <p className="text-xs text-gray-500 leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            )}
+            {/* Courses We Offer - Moved here to fit empty space */}
+            <div className="mt-12 md:mt-16">
+              <h3 className="text-lg md:text-xl font-semibold mb-6 md:mb-8 text-gray-900 border-l-4 border-accent pl-4">
+                Courses We Offer
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {courses.map((course, index) => (
+                  <div
+                    key={index}
+                    className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition border border-gray-100 group"
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className="text-2xl group-hover:scale-125 transition-transform duration-300">✈️</div>
+                      <div>
+                        <h4 className="font-bold text-gray-900 leading-snug group-hover:text-accent transition-colors">
+                          {course.title}
+                        </h4>
+                        <p className="text-[12px] font-medium text-gray-500 mt-2 uppercase tracking-wider">
+                          {course.duration}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
 
-          <div className="lg:w-1/3 space-y-6">
+          <div className="lg:w-1/3 space-y-6 lg:sticky lg:top-24 h-fit">
             <div className="bg-white p-6 sm:p-10 rounded-2xl sm:rounded-[2rem] shadow-sm relative overflow-hidden group border border-gray-100 hover:shadow-xl hover:shadow-accent/5 transition-all duration-500">
               {/* Decorative Quote Icon */}
               <svg className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 text-accent/5 w-16 h-16 sm:w-24 sm:h-24 transform group-hover:scale-110 transition-transform duration-500" fill="currentColor" viewBox="0 0 24 24">
@@ -54,35 +116,6 @@ export default function AviationCourses() {
                 </p>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Courses */}
-        <div>
-          <h3 className="text-xl font-semibold mb-6 text-gray-900">
-            Courses We Offer
-          </h3>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {courses.map((course, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="text-2xl">✈️</div>
-
-                  <div>
-                    <h4 className="font-semibold text-gray-900">
-                      {course.title}
-                    </h4>
-                    <p className="text-sm text-gray-500 mt-2">
-                      {course.duration}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </div>

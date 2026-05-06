@@ -3,7 +3,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle, Info, Star, ChevronRight } from 'lucide-react';
 import EnrollmentModal from '../components/EnrollmentModal';
 
-import course01 from '../assets/images/courses-01.jpg';
+import course01 from '../assets/CourseImage/DiplomainAviation,HospitalityandTravelManagement.png';
+import coursePGDiploma from '../assets/CourseImage/PG Diploma Course in Aviation, Hospitality and Travel Management.png';
+import courseFoundation from '../assets/CourseImage/Foundation in Travel & Tourism with Amadeus.png';
+import coursePassenger from '../assets/CourseImage/Passenger Ground Services Course.png';
+import courseCargo from '../assets/CourseImage/Cargo Introductory Course.png';
+import courseAirport from '../assets/CourseImage/Airport Operations Fundamentals.png';
 import course02 from '../assets/images/courses-02.jpg';
 import course03 from '../assets/images/courses-03.jpg';
 import course04 from '../assets/images/courses-04.jpg';
@@ -22,60 +27,46 @@ const coursesData = [
   },
   {
     id: 2,
-    title: "Foundation in Travel & Tourism with Amadeus",
-    image: course02,
-    duration: "8 Months, 5 days/week (Mon-Fri)",
-    eligibility: ["12th Pass & Graduate", "Age: 18-25 Years"],
-    accreditation: ["AASSC"]
-  },
-  {
-    id: 3,
-    title: "Passenger Ground Services Course",
-    image: course03,
-    duration: "6 Months, 3 days/week",
-    eligibility: ["12th Pass or Above", "Age: 18 - 26 Years"],
-    accreditation: ["AASSC"]
-  },
-  {
-    id: 4,
     title: "PG Diploma Course in Aviation, Hospitality and Travel Management",
-    image: course04,
+    image: coursePGDiploma,
     duration: "6 Months, 5 days/week (Mon-Fri), 2 hours",
     eligibility: ["Pursuing Graduates & Graduates", "Age: 21-27 Years"],
     accreditation: ["Sara", "AASSC"]
   },
   {
+    id: 3,
+    title: "Foundation in Travel & Tourism with Amadeus",
+    image: courseFoundation,
+    duration: "8 Months, 5 days/week (Mon-Fri)",
+    eligibility: ["12th Pass & Graduate", "Age: 18-25 Years"],
+    accreditation: ["AASSC"]
+  },
+  {
+    id: 4,
+    title: "Passenger Ground Services Course",
+    image: coursePassenger,
+    duration: "6 Months, 3 days/week",
+    eligibility: ["12th Pass or Above", "Age: 18 - 26 Years"],
+    accreditation: ["AASSC"]
+   },
+
+    {
     id: 5,
-    title: "Airline Cabin Crew Professional",
-    image: course05,
-    duration: "10 Months, Intensive",
-    eligibility: ["12th Pass", "Height: 155cm (F) / 170cm (M)", "Age: 18-24 Years"],
+    title: "Cargo Introductory Course",
+    image: courseCargo,
+    duration: "6 Months, Regular",
+    eligibility: ["12th Pass or Above", "Age: 18-28 Years"],
     accreditation: ["AASSC"]
   },
   {
     id: 6,
-    title: "Commercial Pilot Liaison Program",
-    image: course01, // Reuse for demo
-    duration: "18 Months, Full Time",
-    eligibility: ["12th Pass (Physics/Maths)", "Class II Medical", "Age: 17+ Years"],
-    accreditation: ["DGCA"]
-  },
-  {
-    id: 7,
-    title: "Aviation Safety & Security",
-    image: course02, // Reuse for demo
+    title: "Airport Operations Fundamentals",
+    image: courseAirport,
     duration: "3 Months, Certificate",
     eligibility: ["Graduate preferred", "Age: 20-30 Years"],
     accreditation: ["BCAS"]
-  },
-  {
-    id: 8,
-    title: "Air Cargo & Logistics Management",
-    image: course03, // Reuse for demo
-    duration: "6 Months, Regular",
-    eligibility: ["12th Pass or Above", "Age: 18-28 Years"],
-    accreditation: ["AASSC"]
   }
+ 
 ];
 
 const TripleArrow = () => (
@@ -128,7 +119,7 @@ const CoursesPage = () => {
 
       {/* Main Content */}
       <div className="container mx-auto px-6 py-20">
-        <div className="flex flex-col lg:flex-row gap-12">
+        <div className="flex flex-col lg:flex-row gap-12 items-start">
           
           {/* Course Grid (Left) */}
           <div className="lg:w-2/3 space-y-12">
@@ -200,7 +191,7 @@ const CoursesPage = () => {
           </div>
 
           {/* Sidebar (Right) */}
-          <div className="lg:w-1/3 space-y-12">
+          <div className="lg:w-1/3 space-y-12 lg:sticky lg:top-10 h-fit">
             
             {/* Recommendation Box */}
             <motion.div 
