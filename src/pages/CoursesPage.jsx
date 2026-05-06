@@ -3,8 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle, Info, Star, ChevronRight } from 'lucide-react';
 import EnrollmentModal from '../components/EnrollmentModal';
 
-import course01 from '../assets/CourseImage/DiplomainAviation,HospitalityandTravelManagement.png';
-import coursePGDiploma from '../assets/CourseImage/PG Diploma Course in Aviation, Hospitality and Travel Management.png';
+import course01 from '../assets/CourseImage/Diploma.png';
+import coursePGDiploma from '../assets/CourseImage/PGdiPloma.png';
 import courseFoundation from '../assets/CourseImage/Foundation in Travel & Tourism with Amadeus.png';
 import coursePassenger from '../assets/CourseImage/Passenger Ground Services Course.png';
 import courseCargo from '../assets/CourseImage/Cargo Introductory Course.png';
