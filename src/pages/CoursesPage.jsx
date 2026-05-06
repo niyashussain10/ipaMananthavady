@@ -21,50 +21,50 @@ const coursesData = [
     id: 1,
     title: "Diploma in Aviation, Hospitality and Travel Management",
     image: course01,
-    duration: "12 Months, 5 days/week (Mon- Fri)",
-    eligibility: ["12th Pass or Pursuing & Graduates", "Age: 18 - 25 Years", "Skill India Certification"],
+    duration: "12 Months, 5 days/week (Mon- Fri) 2 hours/Day",
+    eligibility: ["12th Pass And Above", "Age: 17 - 25 Years"],
     accreditation: ["AASSC"]
   },
   {
     id: 2,
     title: "PG Diploma Course in Aviation, Hospitality and Travel Management",
     image: coursePGDiploma,
-    duration: "6 Months, 5 days/week (Mon-Fri), 2 hours",
-    eligibility: ["Pursuing Graduates & Graduates", "Age: 21-27 Years"],
+    duration: "6 Months, 5 days/week (Mon-Fri), 2 hours/Day",
+    eligibility: ["Graduates / Final Year Graduate", "Age: 19-27 Years"],
     accreditation: ["Sara", "AASSC"]
   },
   {
     id: 3,
     title: "Foundation in Travel & Tourism with Amadeus",
     image: courseFoundation,
-    duration: "8 Months, 5 days/week (Mon-Fri)",
-    eligibility: ["12th Pass & Graduate", "Age: 18-25 Years"],
-    accreditation: ["AASSC"]
+    duration: "8 Months, 5 days/week (Mon-Fri) 2 hours/Day",
+    eligibility: ["12th Pass & Graduate", "Age: 18-27 Years"],
+    accreditation: ["SARA"]
   },
   {
     id: 4,
     title: "Passenger Ground Services Course",
     image: coursePassenger,
-    duration: "6 Months, 3 days/week",
-    eligibility: ["12th Pass or Above", "Age: 18 - 26 Years"],
-    accreditation: ["AASSC"]
+    duration: "6 Months, 5 days/week (Mon-Fri) 2 hours/Day",
+    eligibility: ["12th Pass or Above", "Age: 18 - 27 Years"],
+    accreditation: ["SARA"]
    },
 
     {
     id: 5,
     title: "Cargo Introductory Course",
     image: courseCargo,
-    duration: "6 Months, Regular",
-    eligibility: ["12th Pass or Above", "Age: 18-28 Years"],
-    accreditation: ["AASSC"]
+    duration: "6 Months, 5 days/week (Mon-Fri) 2 hours/Day",
+    eligibility: ["12th Pass or Above", "Age: 18 - 27 Years"],
+    accreditation: ["SARA"]
   },
   {
     id: 6,
     title: "Airport Operations Fundamentals",
     image: courseAirport,
-    duration: "3 Months, Certificate",
-    eligibility: ["Graduate preferred", "Age: 20-30 Years"],
-    accreditation: ["BCAS"]
+    duration: "6 Months, 5 days/week (Mon-Fri) 2 hours/Day",
+    eligibility: ["Graduate preferred", "Age: 18 - 27 Years"],
+    accreditation: ["SARA"]
   }
  
 ];

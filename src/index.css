@@ -8,8 +8,10 @@ html {
   --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-outfit: "Outfit", sans-serif;
   --font-heading: "Saira", sans-serif;
-  --color-primary: #162239;
+  --color-primary: #082B4D;
   --color-navbar: #082B4D;
+  /* 082B4D */
+  /* 2563eb */
   --color-accent: #f5a425;
 }
 
