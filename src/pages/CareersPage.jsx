@@ -184,7 +184,9 @@ const CareersPage = () => {
 
                 <div className="mt-10 pt-8 border-t border-gray-50">
                   <a 
-                    href="mailto:info@saraaviation.in"
+                    href={`https://wa.me/919187250470?text=${encodeURIComponent(`Hello, I am interested in applying for the ${job.title} position at Sara Aviation Academy.`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-3 bg-primary text-white px-8 py-4 rounded-full font-bold hover:bg-accent transition-all duration-300 shadow-lg shadow-primary/10 hover:shadow-accent/20 group"
                   >
                     Apply Now
