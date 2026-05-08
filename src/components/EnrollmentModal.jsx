@@ -19,12 +19,26 @@ const EnrollmentModal = ({ isOpen, onClose, selectedCourse, courses }) => {
     }
   }, [selectedCourse]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API call
-    setTimeout(() => {
+    // LOG DATA FOR TESTING
+    console.log("Enrollment Form Data:", formData);
+
+    try {
+      const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwGGJFr9kFVDeBH-RqXpelU25h1mvMREW4hqBdBh2JNp5w9B2vbmL1L3vICILIFBs2G/exec';
+      await fetch(SCRIPT_URL, { 
+        method: 'POST', 
+        mode: 'no-cors', 
+        body: JSON.stringify({
+          ...formData, 
+          subject: formData.course, // Map Course to Subject column
+          message: "Education: " + formData.education, // Map Education to Message column
+          source: 'Enrollment Modal'
+        }) 
+      });
+      
       setIsSubmitting(false);
       setShowSuccess(true);
       setTimeout(() => {
@@ -32,7 +46,11 @@ const EnrollmentModal = ({ isOpen, onClose, selectedCourse, courses }) => {
         onClose();
         setFormData({ name: '', email: '', phone: '', course: '', education: '' });
       }, 3000);
-    }, 1500);
+    } catch (error) {
+      console.error("Submission error:", error);
+      alert("Something went wrong. Please try again.");
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e) => {

@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import AirlinePartners from "./home/components/AirlinePartners";
 
 const placeholderImg = "https://i.pinimg.com/736x/5d/c5/ff/5dc5ffbad0d623c3196bf4b55291992d.jpg";
@@ -37,14 +38,14 @@ const PlacementPage = () => {
       {/* Header Section */}
       <section className="pt-48 pb-20 bg-primary text-white text-center px-6">
         <div className="max-w-4xl mx-auto">
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-5xl font-bold mb-4"
           >
             Placement Success Stories
           </motion.h1>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
@@ -108,17 +109,21 @@ const PlacementPage = () => {
               Start your journey with Sara Aviation Academy today and join the elite league of aviation professionals.
             </p>
           </motion.div>
-          
-          <motion.button 
+
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-accent text-white px-10 py-4 rounded-full text-lg font-bold hover:bg-accent/90 transition shadow-xl shadow-accent/30"
           >
-            Join Now
-          </motion.button>
+            <Link
+              to="/contact"
+              className="inline-block bg-accent text-white px-10 py-4 rounded-full text-lg font-bold hover:bg-accent/90 transition shadow-xl shadow-accent/30"
+            >
+              Join Now
+            </Link>
+          </motion.div>
         </div>
       </section>
       <AirlinePartners title="Our Placement partners" />

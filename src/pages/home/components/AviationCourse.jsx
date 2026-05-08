@@ -125,17 +125,8 @@ export default function AviationCourses() {
 
 const courses = [
   {
-    title:
-      "Sara Diploma Course in Aviation, Hospitality and Travel Management",
+    title: "Sara Diploma Course in Aviation, Hospitality and Travel Management",
     duration: "Duration: 12 Months, 5 days/week (Mon-Fri) 2 hours",
-  },
-  {
-    title: "Airport Operations Fundamentals",
-    duration: "Duration: 6 Months, 5 days/week (Mon-Fri) 2 hours",
-  },
-  {
-    title: "Passenger Ground Services Course",
-    duration: "Duration: 6 Months, 5 days/week (Mon-Fri) 2 hours",
   },
   {
     title: "PG Diploma Course in Aviation, Hospitality and Travel Management",
@@ -143,10 +134,18 @@ const courses = [
   },
   {
     title: "Foundation in Travel & Tourism with Amadeus",
+    duration: "Duration: 8 Months, 5 days/week (Mon-Fri) 2 hours",
+  },
+  {
+    title: "Airport Operations Fundamentals",
     duration: "Duration: 6 Months, 5 days/week (Mon-Fri) 2 hours",
   },
   {
     title: "Cargo Introductory Course",
+    duration: "Duration: 6 Months, 5 days/week (Mon-Fri) 2 hours",
+  },
+  {
+    title: "Passenger Ground Services Course",
     duration: "Duration: 6 Months, 5 days/week (Mon-Fri) 2 hours",
   },
 ];
