@@ -19,11 +19,12 @@ import puminImg from '../assets/images/pumin.png';
 const coursesData = [
   {
     id: 1,
-    title: "Diploma in Aviation, Hospitality and Travel Management",
+    title: "Sara Diploma Course in Aviation, Hospitality and Travel Management",
     image: course01,
     duration: "12 Months, 5 days/week (Mon- Fri) 2 hours/Day",
     eligibility: ["12th Pass And Above", "Age: 17 - 25 Years"],
-    accreditation: ["AASSC"]
+    accreditation: ["AASSC"],
+    isGovt: true
   },
   {
     id: 2,
@@ -31,7 +32,8 @@ const coursesData = [
     image: coursePGDiploma,
     duration: "6 Months, 5 days/week (Mon-Fri), 2 hours/Day",
     eligibility: ["Graduates / Final Year Graduate", "Age: 19-27 Years"],
-    accreditation: ["Sara", "AASSC"]
+    accreditation: ["Sara", "AASSC"],
+    isGovt: true
   },
   {
     id: 3,
@@ -39,42 +41,44 @@ const coursesData = [
     image: courseFoundation,
     duration: "8 Months, 5 days/week (Mon-Fri) 2 hours/Day",
     eligibility: ["12th Pass & Graduate", "Age: 18-27 Years"],
-    accreditation: ["SARA"]
+    accreditation: ["SARA"],
+    isGovt: false
   },
   {
     id: 4,
-    title: "Passenger Ground Services Course",
-    image: coursePassenger,
+    title: "Airport Operations Fundamentals",
+    image: courseAirport,
     duration: "6 Months, 5 days/week (Mon-Fri) 2 hours/Day",
-    eligibility: ["12th Pass or Above", "Age: 18 - 27 Years"],
-    accreditation: ["SARA"]
-   },
-
-    {
+    eligibility: ["Graduate preferred", "Age: 18 - 27 Years"],
+    accreditation: ["SARA"],
+    isGovt: false
+  },
+  {
     id: 5,
     title: "Cargo Introductory Course",
     image: courseCargo,
     duration: "6 Months, 5 days/week (Mon-Fri) 2 hours/Day",
     eligibility: ["12th Pass or Above", "Age: 18 - 27 Years"],
-    accreditation: ["SARA"]
+    accreditation: ["SARA"],
+    isGovt: false
   },
   {
     id: 6,
-    title: "Airport Operations Fundamentals",
-    image: courseAirport,
+    title: "Passenger Ground Services Course",
+    image: coursePassenger,
     duration: "6 Months, 5 days/week (Mon-Fri) 2 hours/Day",
-    eligibility: ["Graduate preferred", "Age: 18 - 27 Years"],
-    accreditation: ["SARA"]
+    eligibility: ["12th Pass or Above", "Age: 18 - 27 Years"],
+    accreditation: ["SARA"],
+    isGovt: false
   }
- 
 ];
 
 const TripleArrow = () => (
-    <span className="inline-flex ml-1">
-        <span className="opacity-40">›</span>
-        <span className="opacity-70">›</span>
-        <span>›</span>
-    </span>
+  <span className="inline-flex ml-1">
+    <span className="opacity-40">›</span>
+    <span className="opacity-70">›</span>
+    <span>›</span>
+  </span>
 );
 
 const CoursesPage = () => {
@@ -96,7 +100,7 @@ const CoursesPage = () => {
       {/* Hero Section */}
       <section className="bg-primary pt-48 pb-24 text-center">
         <div className="container mx-auto px-6">
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-white text-4xl md:text-6xl font-black uppercase tracking-tight mb-6"
@@ -106,7 +110,7 @@ const CoursesPage = () => {
           <p className="text-white/70 max-w-2xl mx-auto mb-10 text-sm font-medium leading-relaxed">
             From ground handling to cabin crew, we provide the expert training you need to excel in the global travel industry.
           </p>
-          <motion.button 
+          <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={handleEnquire}
@@ -120,12 +124,12 @@ const CoursesPage = () => {
       {/* Main Content */}
       <div className="container mx-auto px-6 py-20">
         <div className="flex flex-col lg:flex-row gap-12 items-start">
-          
+
           {/* Course Grid (Left) */}
           <div className="lg:w-2/3 space-y-12">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
               {coursesData.map((course) => (
-                <motion.div 
+                <motion.div
                   key={course.id}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -135,26 +139,28 @@ const CoursesPage = () => {
                   <div className="relative aspect-video overflow-hidden">
                     <img src={course.image} alt={course.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                       <span className="text-white text-[10px] font-black uppercase tracking-widest bg-accent px-3 py-1">View Details</span>
+                      <span className="text-white text-[10px] font-black uppercase tracking-widest bg-accent px-3 py-1">View Details</span>
                     </div>
                   </div>
-                  
+
                   <div className="p-8 flex-1 flex flex-col">
-                    <h3 className="text-lg font-black uppercase text-primary leading-tight mb-4 group-hover:text-accent transition-colors">
-                      {course.title}
-                    </h3>
-                    <div className="flex items-center gap-2 mb-6 text-gray-400">
-                       <Star className="text-accent" size={12} fill="currentColor" />
-                       <span className="text-[10px] font-bold uppercase tracking-widest">Aviation Excellence</span>
+                    <div className="min-h-[4.5rem]">
+                      <h3 className="text-lg font-black uppercase text-primary leading-tight mb-2 group-hover:text-accent transition-colors">
+                        {course.title}
+                      </h3>
                     </div>
-                    
-                    <div className="space-y-6">
+                    <div className="flex items-center gap-2 mb-6 text-gray-400">
+                      <Star className="text-accent" size={12} fill="currentColor" />
+                      <span className="text-[10px] font-bold uppercase tracking-widest">Aviation Excellence</span>
+                    </div>
+
+                    <div className="flex-1 flex flex-col space-y-6">
                       <div>
                         <h4 className="text-[11px] font-black uppercase tracking-widest text-primary/40 mb-2">Duration</h4>
-                        <p className="text-sm font-bold text-gray-600">{course.duration}</p>
+                        <p className="text-sm font-bold text-gray-600 min-h-[2.5rem]">{course.duration}</p>
                       </div>
 
-                      <div className="bg-gray-50 p-6 rounded-2xl border border-dashed border-gray-200">
+                      <div className="bg-gray-50 p-6 rounded-2xl border border-dashed border-gray-200 flex-1">
                         <h4 className="text-[11px] font-black uppercase tracking-widest text-[#121b2f] mb-4">Eligibility Criteria</h4>
                         <ul className="space-y-2">
                           {course.eligibility.map((item, idx) => (
@@ -166,23 +172,25 @@ const CoursesPage = () => {
                         </ul>
                       </div>
 
-                      <div>
-                         <h4 className="text-[11px] font-black uppercase tracking-widest text-primary/40 mb-3">Govt Recognized Certificate</h4>
-                         <div className="flex gap-4">
-                            {course.accreditation.map(brand => (
-                              <div key={brand} className="bg-white border border-gray-100 px-4 py-2 rounded-lg shadow-sm font-black text-[10px] text-primary/50 tracking-tighter">
-                                 {brand === 'AASSC' ? '🏛️ AASSC' : brand}
-                              </div>
-                            ))}
-                         </div>
-                      </div>
+                      <div className="pt-2">
+                        <h4 className="text-[11px] font-black uppercase tracking-widest text-primary/40 mb-3">
+                          {course.isGovt ? 'Govt Recognized Certificate' : 'Recognized Certificate'}
+                        </h4>
+                        <div className="flex gap-4 mb-6">
+                          {course.accreditation.map(brand => (
+                            <div key={brand} className="bg-white border border-gray-100 px-4 py-2 rounded-lg shadow-sm font-black text-[10px] text-primary/50 tracking-tighter">
+                              {brand === 'AASSC' ? '🏛️ AASSC' : brand}
+                            </div>
+                          ))}
+                        </div>
 
-                      <button 
-                        onClick={() => handleEnroll(course.title)}
-                        className="w-full bg-accent text-white py-4 rounded-xl text-sm font-black uppercase tracking-[0.15em] hover:bg-primary transition-all shadow-lg shadow-accent/20"
-                      >
-                        Enroll Now!
-                      </button>
+                        <button
+                          onClick={() => handleEnroll(course.title)}
+                          className="w-full bg-accent text-white py-4 rounded-xl text-sm font-black uppercase tracking-[0.15em] hover:bg-primary transition-all shadow-lg shadow-accent/20"
+                        >
+                          Enroll Now!
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </motion.div>
@@ -192,9 +200,9 @@ const CoursesPage = () => {
 
           {/* Sidebar (Right) */}
           <div className="lg:w-1/3 space-y-12 lg:sticky lg:top-10 h-fit">
-            
+
             {/* Recommendation Box */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -204,7 +212,7 @@ const CoursesPage = () => {
               <div className="relative z-10 space-y-6">
                 <h3 className="text-white text-2xl font-black leading-tight uppercase">Can I suggest a course for you?</h3>
                 <p className="text-white/60 text-sm leading-relaxed">Answer a few quick questions and we'll recommend the perfect course based on your interests.</p>
-                <button 
+                <button
                   onClick={handleEnquire}
                   className="bg-accent text-white px-6 py-4 rounded-xl text-xs font-black uppercase tracking-widest hover:bg-white hover:text-accent transition-all shadow-xl shadow-black/20"
                 >
@@ -223,7 +231,7 @@ const CoursesPage = () => {
                   { name: "Aditi", role: "Vistara", img: "/assets/Sarah Aviation Placements/Aditi.png" },
                   { name: "Ananya", role: "Air India Express", img: "/assets/Sarah Aviation Placements/Ananya.png" },
                 ].map((person, idx) => (
-                  <motion.div 
+                  <motion.div
                     key={idx}
                     initial={{ opacity: 0, x: 20 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -233,10 +241,10 @@ const CoursesPage = () => {
                   >
                     {/* Square avatar */}
                     <div className="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 border border-gray-100">
-                      <img 
-                        src={person.img} 
-                        alt={person.name} 
-                        className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500" 
+                      <img
+                        src={person.img}
+                        alt={person.name}
+                        className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500"
                       />
                     </div>
                     {/* Info */}
@@ -257,10 +265,10 @@ const CoursesPage = () => {
         </div>
       </div>
 
-      <EnrollmentModal 
-        isOpen={modalOpen} 
-        onClose={() => setModalOpen(false)} 
-        selectedCourse={selectedCourse} 
+      <EnrollmentModal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        selectedCourse={selectedCourse}
         courses={coursesData}
       />
     </div>

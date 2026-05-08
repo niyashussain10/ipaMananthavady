@@ -176,7 +176,7 @@ const NewsPage = () => {
       </AnimatePresence>
 
       {/* Newsletter / CTA Section */}
-      <section className="py-24 bg-gray-50 text-center px-6">
+      {/* <section className="py-24 bg-gray-50 text-center px-6">
         <div className="max-w-2xl mx-auto space-y-6">
           <h2 className="text-3xl font-bold text-primary">Get the Latest Updates</h2>
           <p className="text-gray-600">
@@ -193,7 +193,7 @@ const NewsPage = () => {
             </button>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };
