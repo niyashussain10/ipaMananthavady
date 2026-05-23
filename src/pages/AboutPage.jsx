@@ -51,17 +51,17 @@ const AboutPage = () => (
     </section>
 
     {/* Intro Section */}
-    <section className="py-24">
-      <div className="container mx-auto px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-          <div className="space-y-10">
+    <section className="py-12 md:py-24">
+      <div className="container mx-auto px-6 md:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+          <div className="space-y-6 md:space-y-10">
             <div className="space-y-4">
-              <h2 className="text-navy text-4xl md:text-5xl font-black uppercase tracking-tighter leading-[1.1]">
+              <h2 className="text-navy text-3xl md:text-5xl font-black uppercase tracking-tighter leading-[1.1]">
                 Quality Education <br/> In <span className="text-gold">Accounting</span>
               </h2>
               <div className="w-20 h-1.5 bg-gold rounded-full" />
             </div>
-            <div className="space-y-6 text-slate-500 text-lg font-light leading-relaxed">
+            <div className="space-y-6 text-slate-500 text-base md:text-lg font-light leading-relaxed">
               <p>
                 The ISO 9001: 2015 Certified Institute ever since its inception has grown by leaps and bounds. 
                 Our on-the-job training programs are designed to equip individuals with the necessary skills and knowledge to 
@@ -73,26 +73,26 @@ const AboutPage = () => (
               </p>
             </div>
             
-            <div className="grid grid-cols-2 gap-8 pt-8 border-t border-slate-100">
+            <div className="grid grid-cols-2 gap-6 md:gap-8 pt-8 border-t border-slate-100">
               <div>
-                <h4 className="text-navy text-3xl font-black uppercase">2002</h4>
+                <h4 className="text-navy text-2xl md:text-3xl font-black uppercase">2002</h4>
                 <p className="text-gold text-[10px] font-black uppercase tracking-widest">Year Incorporated</p>
               </div>
               <div>
-                <h4 className="text-navy text-3xl font-black uppercase">ISO</h4>
+                <h4 className="text-navy text-2xl md:text-3xl font-black uppercase">ISO</h4>
                 <p className="text-gold text-[10px] font-black uppercase tracking-widest">9001:2015 Certified</p>
               </div>
             </div>
           </div>
 
           <div className="relative">
-            <div className="bg-white p-12 rounded-[3rem] shadow-2xl relative z-10 border border-slate-50">
-              <h3 className="text-navy text-2xl font-black uppercase mb-10 tracking-tight">Our Specialities</h3>
-              <div className="space-y-5">
+            <div className="bg-white p-6 sm:p-12 rounded-[2rem] sm:rounded-[3rem] shadow-2xl relative z-10 border border-slate-50">
+              <h3 className="text-navy text-xl sm:text-2xl font-black uppercase mb-6 sm:mb-10 tracking-tight">Our Specialities</h3>
+              <div className="space-y-4 sm:space-y-5">
                 {specialities.map((item, index) => (
-                  <div key={index} className="flex gap-4 items-start group">
-                    <CheckCircle2 className="text-gold w-5 h-5 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                    <span className="text-slate-600 text-sm font-bold uppercase tracking-tight">{item}</span>
+                  <div key={index} className="flex gap-3 sm:gap-4 items-start group">
+                    <CheckCircle2 className="text-gold w-4 h-4 sm:w-5 sm:h-5 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                    <span className="text-slate-600 text-xs sm:text-sm font-bold uppercase tracking-tight">{item}</span>
                   </div>
                 ))}
               </div>
@@ -104,14 +104,14 @@ const AboutPage = () => (
     </section>
 
     {/* Certifications Section */}
-    <section className="py-24 bg-navy relative overflow-hidden">
-      <div className="container mx-auto px-8 relative z-10">
-        <div className="text-center mb-16 space-y-4">
-          <span className="text-gold text-sm font-black uppercase tracking-[0.3em]">Recognition</span>
-          <h2 className="text-white text-4xl md:text-5xl font-black uppercase tracking-tighter">Certifications Provided</h2>
+    <section className="py-12 md:py-24 bg-navy relative overflow-hidden">
+      <div className="container mx-auto px-6 md:px-8 relative z-10">
+        <div className="text-center mb-12 md:mb-16 space-y-3">
+          <span className="text-gold text-xs sm:text-sm font-black uppercase tracking-[0.3em]">Recognition</span>
+          <h2 className="text-white text-3xl md:text-5xl font-black uppercase tracking-tighter">Certifications Provided</h2>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
           {certifications.map((item, index) => (
             <motion.div
               key={index}
@@ -119,11 +119,11 @@ const AboutPage = () => (
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
-              className="bg-white/5 border border-white/10 p-8 rounded-3xl group hover:bg-gold transition-all duration-500"
+              className="bg-white/5 border border-white/10 p-6 sm:p-8 rounded-2xl sm:rounded-3xl group hover:bg-gold transition-all duration-500"
             >
-              <div className="flex gap-4 items-center">
-                <Award className="text-gold group-hover:text-navy transition-colors w-8 h-8" />
-                <span className="text-white group-hover:text-navy text-sm font-black uppercase tracking-tight">{item}</span>
+              <div className="flex gap-3 sm:gap-4 items-center">
+                <Award className="text-gold group-hover:text-navy transition-colors w-6 h-6 sm:w-8 sm:h-8 shrink-0" />
+                <span className="text-white group-hover:text-navy text-xs sm:text-sm font-black uppercase tracking-tight leading-snug">{item}</span>
               </div>
             </motion.div>
           ))}

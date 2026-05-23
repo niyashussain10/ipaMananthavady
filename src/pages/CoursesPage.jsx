@@ -185,8 +185,8 @@ const CoursesPage = () => {
       </section>
 
       {/* Course Grid */}
-      <div className="container mx-auto px-8 py-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div className="container mx-auto px-6 md:px-8 py-12 md:py-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
           {coursesData.map((course) => (
             <motion.div
               key={course.id}
@@ -194,9 +194,9 @@ const CoursesPage = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className={`bg-white rounded-[2.5rem] overflow-hidden shadow-2xl border ${course.isFeatured ? 'border-gold ring-1 ring-gold/20' : 'border-slate-100'} flex flex-col group scroll-mt-28`}
+              className={`bg-white rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden shadow-2xl border ${course.isFeatured ? 'border-gold ring-1 ring-gold/20' : 'border-slate-100'} flex flex-col group scroll-mt-28`}
             >
-              <div className="relative h-64 overflow-hidden">
+              <div className="relative h-48 sm:h-64 overflow-hidden">
                 <img src={course.image} alt={course.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                 {course.isPremium && (
                   <div className="absolute top-6 left-6 bg-gold text-navy text-[10px] font-black px-4 py-1.5 uppercase tracking-widest rounded-full shadow-lg">
@@ -210,22 +210,22 @@ const CoursesPage = () => {
                 )}
               </div>
 
-              <div className="p-10 flex flex-col flex-1">
-                <h3 className="text-2xl font-black text-navy uppercase leading-tight mb-4 group-hover:text-gold transition-colors">
+              <div className="p-6 sm:p-10 flex flex-col flex-1">
+                <h3 className="text-xl sm:text-2xl font-black text-navy uppercase leading-tight mb-4 group-hover:text-gold transition-colors">
                   {course.title}
                 </h3>
-                <p className="text-slate-500 text-sm mb-8 leading-relaxed">{course.description}</p>
+                <p className="text-slate-500 text-xs sm:text-sm mb-6 sm:mb-8 leading-relaxed">{course.description}</p>
                 
-                <div className="space-y-6 mb-10 flex-1">
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 pt-4 border-t border-slate-100">
+                <div className="space-y-6 mb-8 sm:mb-10 flex-1">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 pt-4 border-t border-slate-100">
                     {/* Left: Course Details */}
                     <div>
                       <h4 className="text-xs font-black uppercase tracking-wider text-navy mb-4 border-b border-slate-100 pb-2">
                         📋 Course Details
                       </h4>
-                      <div className="grid grid-cols-1 gap-3">
+                      <div className="grid grid-cols-1 gap-2.5 sm:gap-3">
                         {course.curriculum.map((item, idx) => (
-                          <div key={idx} className="flex items-start gap-3 text-xs font-bold text-slate-600 leading-tight">
+                          <div key={idx} className="flex items-start gap-2.5 sm:gap-3 text-xs font-bold text-slate-600 leading-tight">
                             <CheckCircle size={14} className="text-gold shrink-0 mt-0.5" />
                             {item}
                           </div>
@@ -238,9 +238,9 @@ const CoursesPage = () => {
                       <h4 className="text-xs font-black uppercase tracking-wider text-navy mb-4 border-b border-slate-100 pb-2">
                         🎓 Course Certificates
                       </h4>
-                      <div className="grid grid-cols-1 gap-3">
+                      <div className="grid grid-cols-1 gap-2.5 sm:gap-3">
                         {course.certificates.map((item, idx) => (
-                          <div key={idx} className="flex items-start gap-3 text-xs font-bold text-slate-600 leading-tight">
+                          <div key={idx} className="flex items-start gap-2.5 sm:gap-3 text-xs font-bold text-slate-600 leading-tight">
                             <div className="w-1.5 h-1.5 rounded-full bg-gold shrink-0 mt-2" />
                             {item}
                           </div>
@@ -253,35 +253,35 @@ const CoursesPage = () => {
                       <h5 className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-4">
                         Software & Tools Covered:
                       </h5>
-                      <div className="flex flex-wrap items-center gap-4">
+                      <div className="flex flex-wrap items-center gap-2 sm:gap-4">
                         {course.softwareLogos.map((logo, lIdx) => (
-                          <div key={lIdx} className="bg-white border border-slate-100 p-2 rounded-xl h-16 px-4 flex items-center justify-center shadow-sm">
+                          <div key={lIdx} className="bg-white border border-slate-100 p-1 sm:p-2 rounded-xl h-12 sm:h-16 px-2 sm:px-4 flex items-center justify-center shadow-sm">
                             {logo === "tally" && (
-                              <img src="/tally_logo.png" alt="Tally Prime" className="h-12 w-auto object-contain px-1" />
+                              <img src="/tally_logo.png" alt="Tally Prime" className="h-8 sm:h-12 w-auto object-contain px-1" />
                             )}
                             {logo === "zoho" && (
-                              <img src="/zoho_logo.png" alt="Zoho Books" className="h-12 w-auto object-contain px-1" />
+                              <img src="/zoho_logo.png" alt="Zoho Books" className="h-8 sm:h-12 w-auto object-contain px-1" />
                             )}
                             {logo === "sap" && (
-                              <img src="/sap_logo.png" alt="SAP B1" className="h-12 w-auto object-contain px-1" />
+                              <img src="/sap_logo.png" alt="SAP B1" className="h-8 sm:h-12 w-auto object-contain px-1" />
                             )}
                             {logo === "saps4" && (
-                              <img src="/sap_logo.png" alt="SAP S/4HANA" className="h-12 w-auto object-contain px-1" />
+                              <img src="/sap_logo.png" alt="SAP S/4HANA" className="h-8 sm:h-12 w-auto object-contain px-1" />
                             )}
                             {logo === "quickbooks" && (
-                              <img src="/quickbooks_logo.png" alt="QuickBooks" className="h-12 w-auto object-contain px-1" />
+                              <img src="/quickbooks_logo.png" alt="QuickBooks" className="h-8 sm:h-12 w-auto object-contain px-1" />
                             )}
                             {logo === "excel" && (
-                              <img src="/excel_logo.png" alt="Excel" className="h-12 w-auto object-contain px-1" />
+                              <img src="/excel_logo.png" alt="Excel" className="h-8 sm:h-12 w-auto object-contain px-1" />
                             )}
                             {logo === "busy" && (
-                              <img src="/busy_logo.png" alt="Busy" className="h-12 w-auto object-contain px-1" />
+                              <img src="/busy_logo.png" alt="Busy" className="h-8 sm:h-12 w-auto object-contain px-1" />
                             )}
                             {logo === "gst" && (
-                              <img src="/gst_logo.png" alt="GST Portal" className="h-12 w-auto object-contain px-1" />
+                              <img src="/gst_logo.png" alt="GST Portal" className="h-8 sm:h-12 w-auto object-contain px-1" />
                             )}
                             {logo === "vat" && (
-                              <img src="/gulf_vat_logo.png" alt="Gulf VAT" className="h-12 w-auto object-contain px-1" />
+                              <img src="/gulf_vat_logo.png" alt="Gulf VAT" className="h-8 sm:h-12 w-auto object-contain px-1" />
                             )}
                           </div>
                         ))}
