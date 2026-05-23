@@ -55,8 +55,22 @@ const UpcomingBatch = () => {
     setIsSubmitting(true);
     
     try {
+      const messageText = `*Upcoming Batch Entrance Inquiry - IPA Kerala*
+----------------------------------
+👤 *Name:* ${formData.name}
+✉️ *Email:* ${formData.email}
+📱 *Phone:* ${formData.phone}
+💻 *Source:* Upcoming Batch Form`;
+
+      const encodedMessage = encodeURIComponent(messageText);
+      const whatsappUrl = `https://wa.me/919400382776?text=${encodedMessage}`;
+
+      // Open WhatsApp in a new tab
+      window.open(whatsappUrl, '_blank');
+
+      // Submit to Google Sheets for backend logging
       const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwGGJFr9kFVDeBH-RqXpelU25h1mvMREW4hqBdBh2JNp5w9B2vbmL1L3vICILIFBs2G/exec';
-      await fetch(SCRIPT_URL, { 
+      fetch(SCRIPT_URL, { 
         method: 'POST', 
         mode: 'no-cors',
         body: JSON.stringify({
@@ -64,7 +78,7 @@ const UpcomingBatch = () => {
           subject: 'Entrance Exam Inquiry', 
           source: 'Upcoming Batch Form'
         }) 
-      });
+      }).catch(err => console.error("Sheets log failed:", err));
       
       setShowSuccess(true);
       setFormData({ name: '', email: '', phone: '' });
@@ -107,7 +121,7 @@ const UpcomingBatch = () => {
                 <span className="text-accent italic">Batch 2026</span>
               </h2>
               <p className="text-white/60 text-lg max-w-md font-medium leading-relaxed">
-                The next generation of aviation leaders is being shaped. Secure your place in our elite training program today.
+                The next generation of professional accountants is being shaped. Secure your place in our elite training program today.
               </p>
             </div>
 

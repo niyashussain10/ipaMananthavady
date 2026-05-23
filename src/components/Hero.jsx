@@ -1,96 +1,98 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import heroVideo from '../assets/images/aviationVideo.mp4';
-import posterImage from '../assets/images/video-bg.jpg';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { ChevronRight, Calculator, Award, GraduationCap } from 'lucide-react';
 
 const Hero = () => {
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
-
   return (
-    <section id="top" className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-primary">
-      {/* Background Video with Poster and Fade-in */}
-      <motion.video 
-        autoPlay 
-        muted 
-        loop 
-        playsInline 
-        preload="auto"
-        poster={posterImage}
-        onLoadedData={() => setIsVideoLoaded(true)}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: isVideoLoaded ? 1 : 0 }}
-        transition={{ duration: 1.5, ease: "easeIn" }}
-        className="absolute top-0 left-0 w-full h-full object-cover z-0"
-      >
-        <source src={heroVideo} type="video/mp4" />
-      </motion.video>
-
-      {/* Static Poster Fallback (Visible while video loads if poster attribute is slow) */}
-      {!isVideoLoaded && (
-        <div 
-          className="absolute inset-0 bg-cover bg-center z-[1]" 
-          style={{ backgroundImage: `url(${posterImage})` }}
+    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-navy">
+      {/* Dynamic Background */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/90 to-transparent z-10" />
+        <img 
+          src="/hero_bg.png" 
+          alt="Accounting Training" 
+          className="w-full h-full object-cover opacity-40 scale-105"
         />
-      )}
-
-      {/* Dark Overlay */}
-      <div className="absolute top-0 left-0 w-full h-full bg-primary/75 z-10" />
-
-      {/* Content */}
-      <div className="relative z-20 container mx-auto px-6 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
-          className="max-w-4xl mx-auto"
-        >
-          <motion.h6 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8 }}
-            className="text-white text-base md:text-lg font-semibold uppercase tracking-[4px] mb-6"
-          >
-            Sara Aviation Academy
-          </motion.h6>
-          
-          <motion.h2 
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 1, duration: 0.8 }}
-            className="text-white text-4xl md:text-7xl font-extrabold uppercase tracking-tight leading-[0.9] mb-10"
-          >
-            <span className="text-accent italic font-black">Your</span> Classroom <br/>
-            <span className="text-3xl md:text-5xl opacity-80">In The Sky</span>
-          </motion.h2>
-          
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.3 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-block"
-          >
-            <a 
-              href="/courses" 
-              className="bg-accent text-white px-10 py-5 text-sm font-black uppercase tracking-widest hover:bg-white hover:text-accent transition-all duration-300 shadow-2xl shadow-accent/20 rounded-sm"
-            >
-              Start Your Career
-            </a>
-          </motion.div>
-        </motion.div>
+        {/* Animated Orbs */}
+        <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-gold/10 rounded-full blur-[120px] animate-pulse" />
+        <div className="absolute bottom-1/4 left-1/4 w-[300px] h-[300px] bg-gold/5 rounded-full blur-[100px] animate-pulse delay-700" />
       </div>
 
-      {/* Bottom Scroll Indicator */}
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2"
-      >
-        <div className="w-[1px] h-12 bg-gradient-to-b from-white/0 via-white/50 to-white/0" />
-        <span className="text-white/30 text-[10px] uppercase font-bold tracking-[0.3em]">Scroll</span>
-      </motion.div>
+      <div className="container mx-auto px-8 relative z-20">
+        <div className="max-w-4xl">
+          {/* Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-10"
+          >
+            <Award className="text-gold w-5 h-5" />
+            <span className="text-white text-xs font-black uppercase tracking-[0.3em]">ISO 9001:2015 Certified Institute</span>
+          </motion.div>
+
+          {/* Main Title */}
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-5xl md:text-8xl font-black text-white leading-[1.05] uppercase tracking-tighter mb-10"
+          >
+            Become a Professional <br/>
+            <span className="text-gold italic underline decoration-white/10 underline-offset-[20px]">Accountant</span>
+          </motion.h1>
+
+          {/* Tagline */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="flex flex-col md:flex-row md:items-center gap-8 mb-12"
+          >
+            <p className="text-white/60 text-lg md:text-2xl font-light leading-relaxed max-w-xl">
+              Equip yourself with practical skills and work anywhere in the world. MIAM is your <span className="text-gold font-black italic">PASSPORT</span> to a bright future!
+            </p>
+            <div className="hidden md:block w-px h-16 bg-white/10" />
+            <div className="flex flex-col gap-1">
+              <span className="text-gold text-3xl font-black tracking-tighter">20+</span>
+              <span className="text-white/40 text-[10px] font-black uppercase tracking-widest leading-none">Years of Excellence</span>
+            </div>
+          </motion.div>
+
+          {/* CTA Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="flex flex-wrap gap-6"
+          >
+            <a 
+              href="/courses"
+              className="px-10 py-5 bg-gold text-navy rounded-2xl text-xs font-black uppercase tracking-[0.2em] hover:bg-white transition-all shadow-2xl flex items-center gap-3 group"
+            >
+              Explore Courses
+              <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </a>
+            <a 
+              href="/contact"
+              className="px-10 py-5 bg-white/5 text-white border border-white/20 rounded-2xl text-xs font-black uppercase tracking-[0.2em] hover:bg-white/10 transition-all backdrop-blur-sm flex items-center gap-3"
+            >
+              Contact Branches
+              <div className="w-2 h-2 bg-gold rounded-full" />
+            </a>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Floating Info */}
+      <div className="absolute bottom-12 right-12 hidden lg:flex items-center gap-6">
+        <div className="text-right">
+          <p className="text-white/40 text-[10px] font-black uppercase tracking-widest mb-1">Admissions Open</p>
+          <a href="tel:+919400382776" className="text-white text-lg font-black tracking-tight underline decoration-gold decoration-2 underline-offset-4 hover:text-gold transition-colors">+91 9400382776</a>
+        </div>
+        <div className="w-16 h-16 rounded-2xl bg-gold flex items-center justify-center shadow-2xl">
+          <GraduationCap className="text-navy w-8 h-8" />
+        </div>
+      </div>
     </section>
   );
 };

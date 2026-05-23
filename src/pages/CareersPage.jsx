@@ -1,82 +1,82 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Plane, Briefcase, Users, GraduationCap, Mail, MapPin, Clock, ChevronRight } from "lucide-react";
+import { Briefcase, Users, GraduationCap, Mail, MapPin, Clock, ChevronRight, Calculator, PieChart, TrendingUp } from "lucide-react";
 
 const benefits = [
   {
-    icon: <Plane className="w-8 h-8" />,
-    title: "Global Exposure",
-    desc: "Work with international partners and build a career that spans across borders."
+    icon: <Calculator className="w-8 h-8" />,
+    title: "Global Standards",
+    desc: "Train students on international accounting standards including GCC VAT and SAP."
   },
   {
     icon: <Users className="w-8 h-8" />,
-    title: "Expert Mentorship",
-    desc: "Collaborate with veteran pilots and industry leaders in a supportive environment."
+    title: "Collaborative Team",
+    desc: "Work with certified SAP consultants and GST experts in a professional environment."
   },
   {
-    icon: <Briefcase className="w-8 h-8" />,
-    title: "Career Growth",
-    desc: "Structured paths for professional advancement within the world of aviation."
+    icon: <TrendingUp className="w-8 h-8" />,
+    title: "Career Path",
+    desc: "Growth opportunities within our growing network of accounting institutes across Kerala."
   },
   {
-    icon: <GraduationCap className="w-8 h-8" />,
-    title: "Continuous Learning",
-    desc: "Access to advanced training modules and the latest aviation technology."
+    icon: <PieChart className="w-8 h-8" />,
+    title: "Impactful Work",
+    desc: "Help graduates secure high-paying jobs in the global accounting industry."
   }
 ];
 
 const jobOpenings = [
   {
-    title: "Aviation & Hospitality Faculty",
-    experience: "2–5 Years",
-    location: "Yelhanka New Town, Bangalore",
+    title: "Accounting Faculty (SAP & GST)",
+    experience: "3–5 Years",
+    location: "Mananthavady / Sulthan Bathery",
     type: "Full-Time",
     responsibilities: [
-      "Deliver training in aviation, cabin crew & hospitality modules",
-      "Train students in grooming, communication & customer service",
-      "Conduct practical sessions, mock interviews & assessments",
-      "Guide students for placements and career readiness"
+      "Deliver training in SAP FI/CO, Business One, and GST modules",
+      "Guide students in Tally Prime, Zoho Books, and QuickBooks",
+      "Conduct practical on-the-job training sessions",
+      "Develop and update curriculum based on industry trends"
     ],
     skills: [
-      "Excellent communication & presentation skills",
-      "Knowledge of aviation/hospitality industry standards",
-      "Confident, well-groomed personality",
-      "Teaching or industry experience preferred"
+      "Expertise in SAP (Certified preferred)",
+      "Deep knowledge of Indian GST & Gulf VAT",
+      "Proficiency in Tally Prime & MS Excel",
+      "Strong communication & teaching skills"
     ]
   },
   {
-    title: "Tele-caller",
-    experience: "2–3 Years",
-    location: "Yelhanka New Town, Bangalore",
+    title: "Academic Counselor",
+    experience: "1–3 Years",
+    location: "Kozhikode / Kalpetta",
     type: "Full-Time",
     responsibilities: [
-      "Call & follow up on leads",
-      "Explain courses & fix appointments",
-      "Update lead details in Excel",
-      "Achieve daily/monthly targets"
+      "Advise students on accounting career pathways",
+      "Handle course inquiries and admissions",
+      "Manage student registrations and documentation",
+      "Achieve monthly enrollment targets"
     ],
     skills: [
-      "Strong communication & convincing skills",
-      "Target-oriented",
-      "Education sector experience preferred"
+      "Excellent communication & convincing skills",
+      "Knowledge of accounting career trends",
+      "Customer-centric approach",
+      "Proficiency in MS Office"
     ]
   }
 ];
 
 const steps = [
-  { id: "01", title: "Apply", desc: "Submit your updated CV and professional portfolio." },
-  { id: "02", title: "Review", desc: "Our HR team evaluates your credentials and experience." },
-  { id: "03", title: "Interview", desc: "Technical and cultural fit discussions with our leadership." }
+  { id: "01", title: "Apply", desc: "Submit your CV and experience portfolio." },
+  { id: "02", title: "Interview", desc: "Technical and skill assessment with our experts." },
+  { id: "03", title: "Onboarding", desc: "Join the IPA family and start mentoring." }
 ];
 
 const CareersPage = () => {
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-slate-50 min-h-screen">
       {/* Hero Section */}
-      <section className="pt-44 md:pt-60 pb-20 md:pb-32 bg-primary text-white relative overflow-hidden px-6">
+      <section className="pt-48 pb-24 bg-navy text-white relative overflow-hidden px-8">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 right-10 w-96 h-96 bg-accent rounded-full blur-[120px]" />
-          <div className="absolute bottom-0 left-10 w-96 h-96 bg-blue-400 rounded-full blur-[120px]" />
+          <div className="absolute top-0 right-10 w-96 h-96 bg-gold rounded-full blur-[120px]" />
         </div>
         
         <div className="container mx-auto relative z-10 text-center">
@@ -85,23 +85,23 @@ const CareersPage = () => {
             animate={{ opacity: 1, y: 0 }}
             className="max-w-3xl mx-auto flex flex-col items-center"
           >
-            <span className="inline-block px-5 py-2 bg-accent/20 text-accent rounded-full text-[10px] font-black uppercase tracking-[0.2em] mb-8 border border-accent/20">
-              Join Our Crew
+            <span className="inline-block px-5 py-2 bg-gold/20 text-gold rounded-full text-[10px] font-black uppercase tracking-[0.2em] mb-8 border border-gold/20">
+              Join Our Faculty
             </span>
-            <h1 className="text-3xl md:text-7xl font-black mb-6 leading-tight md:leading-[1.1] tracking-tight">
-              Build Your Future <br /> 
-              <span className="text-accent underline md:underline decoration-white/10 underline-offset-[12px]">With Sara Aviation</span>
+            <h1 className="text-4xl md:text-7xl font-black mb-6 leading-tight uppercase tracking-tight">
+              Shape the <span className="text-gold">Future</span> <br /> 
+              of Accounting
             </h1>
-            <p className="text-sm md:text-xl text-white/60 max-w-xl mx-auto leading-relaxed md:leading-loose">
-              We are on a mission to redefine aviation training. Be part of a team that inspires excellence and shapes the next generation of airline professionals.
+            <p className="text-white/60 max-w-xl mx-auto text-lg font-light leading-relaxed">
+              We are on a mission to redefine accounting training. Be part of a team that inspires excellence and shapes the next generation of finance professionals.
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* Benefits Grid */}
-      <section className="py-6 md:py-12 container mx-auto px-6 max-w-7xl">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+      <section className="py-24 container mx-auto px-8 max-w-7xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {benefits.map((benefit, index) => (
             <motion.div
               key={index}
@@ -109,59 +109,59 @@ const CareersPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="p-6 md:p-8 rounded-[2rem] bg-gray-50 hover:bg-white hover:shadow-2xl transition-all duration-500 border border-transparent hover:border-gray-100 group"
+              className="p-10 rounded-3xl bg-white hover:shadow-2xl transition-all duration-500 border border-slate-100 group"
             >
-              <div className="w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-primary text-white flex items-center justify-center mb-6 group-hover:bg-accent transition-colors duration-300">
-                {React.cloneElement(benefit.icon, { className: "w-6 h-6 md:w-8 md:h-8" })}
+              <div className="w-16 h-16 rounded-2xl bg-navy text-white flex items-center justify-center mb-8 group-hover:bg-gold transition-colors duration-300">
+                {benefit.icon}
               </div>
-              <h3 className="text-lg md:text-xl font-bold text-primary mb-3">{benefit.title}</h3>
-              <p className="text-gray-500 text-xs md:text-sm leading-relaxed">{benefit.desc}</p>
+              <h3 className="text-xl font-black text-navy mb-4 uppercase">{benefit.title}</h3>
+              <p className="text-slate-500 text-sm leading-relaxed">{benefit.desc}</p>
             </motion.div>
           ))}
         </div>
       </section>
 
       {/* Current Openings Section */}
-      <section className="py-6 md:py-12 bg-gray-50/50 relative overflow-hidden">
-        <div className="container mx-auto px-6 max-w-7xl relative z-10">
-          <div className="text-center mb-8">
-            <span className="text-accent font-bold text-xs uppercase tracking-widest mb-4 block">Opportunities</span>
-            <h2 className="text-3xl md:text-5xl font-black text-primary">Current Openings</h2>
+      <section className="py-24 bg-slate-100/50">
+        <div className="container mx-auto px-8 max-w-7xl">
+          <div className="text-center mb-16">
+            <span className="text-gold font-black text-xs uppercase tracking-[0.3em] mb-4 block">Work With Us</span>
+            <h2 className="text-4xl md:text-5xl font-black text-navy uppercase tracking-tighter">Open Positions</h2>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {jobOpenings.map((job, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-100 flex flex-col h-full"
+                className="bg-white p-12 rounded-[2.5rem] shadow-xl hover:shadow-2xl transition-all duration-500 border border-slate-100 flex flex-col"
               >
-                <div className="flex flex-wrap gap-3 mb-6">
-                  <span className="px-4 py-1.5 bg-accent/10 text-accent text-[10px] font-bold rounded-full uppercase tracking-wider flex items-center gap-2">
+                <div className="flex flex-wrap gap-3 mb-8">
+                  <span className="px-4 py-1.5 bg-gold/10 text-gold text-[10px] font-black rounded-full uppercase tracking-wider flex items-center gap-2">
                     <Clock size={12} /> {job.type}
                   </span>
-                  <span className="px-4 py-1.5 bg-primary/5 text-primary/60 text-[10px] font-bold rounded-full uppercase tracking-wider flex items-center gap-2">
+                  <span className="px-4 py-1.5 bg-navy/5 text-navy/60 text-[10px] font-black rounded-full uppercase tracking-wider flex items-center gap-2">
                     <MapPin size={12} /> {job.location}
                   </span>
                 </div>
 
-                <h3 className="text-2xl md:text-3xl font-black text-primary mb-4">{job.title}</h3>
-                <div className="flex items-center gap-2 text-gray-400 text-sm mb-8">
+                <h3 className="text-3xl font-black text-navy mb-4 uppercase">{job.title}</h3>
+                <div className="flex items-center gap-2 text-slate-400 text-sm mb-10">
                   <Briefcase size={16} />
-                  <span>Experience: <span className="text-primary font-bold">{job.experience}</span></span>
+                  <span className="font-bold">Exp: {job.experience}</span>
                 </div>
 
-                <div className="space-y-8 flex-grow">
+                <div className="space-y-10 flex-grow">
                   <div>
-                    <h4 className="text-primary font-bold mb-4 flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-accent" /> Responsibilities
+                    <h4 className="text-navy font-black text-xs uppercase tracking-widest mb-6 flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-gold" /> Responsibilities
                     </h4>
-                    <ul className="space-y-3">
+                    <ul className="space-y-4">
                       {job.responsibilities.map((resp, idx) => (
-                        <li key={idx} className="flex gap-3 text-sm text-gray-500 leading-relaxed">
-                          <ChevronRight size={16} className="text-accent shrink-0 mt-0.5" />
+                        <li key={idx} className="flex gap-3 text-sm text-slate-500 leading-relaxed">
+                          <ChevronRight size={16} className="text-gold shrink-0" />
                           {resp}
                         </li>
                       ))}
@@ -169,12 +169,12 @@ const CareersPage = () => {
                   </div>
 
                   <div>
-                    <h4 className="text-primary font-bold mb-4 flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-accent" /> Skills Required
+                    <h4 className="text-navy font-black text-xs uppercase tracking-widest mb-6 flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-gold" /> Expertise Required
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {job.skills.map((skill, idx) => (
-                        <span key={idx} className="px-3 py-1 bg-gray-50 text-gray-600 text-xs rounded-lg border border-gray-100 italic">
+                        <span key={idx} className="px-4 py-1 bg-slate-50 text-navy/70 text-[10px] font-bold rounded-lg border border-slate-100 uppercase tracking-tighter">
                           {skill}
                         </span>
                       ))}
@@ -182,15 +182,13 @@ const CareersPage = () => {
                   </div>
                 </div>
 
-                <div className="mt-10 pt-8 border-t border-gray-50">
+                <div className="mt-12 pt-8 border-t border-slate-50">
                   <a 
-                    href={`https://wa.me/919187250470?text=${encodeURIComponent(`Hello, I am interested in applying for the ${job.title} position at Sara Aviation Academy.`)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 bg-primary text-white px-8 py-4 rounded-full font-bold hover:bg-accent transition-all duration-300 shadow-lg shadow-primary/10 hover:shadow-accent/20 group"
+                    href="mailto:info@ipakerala.com"
+                    className="inline-flex items-center gap-3 bg-navy text-white px-10 py-5 rounded-full text-xs font-black uppercase tracking-widest hover:bg-gold hover:text-navy transition-all duration-300 shadow-xl shadow-navy/10"
                   >
                     Apply Now
-                    <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                    <ChevronRight size={18} />
                   </a>
                 </div>
               </motion.div>
@@ -199,49 +197,9 @@ const CareersPage = () => {
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="py-6 md:py-12 container mx-auto px-6 max-w-7xl">
-        <div className="bg-primary rounded-[2.5rem] md:rounded-[3rem] p-8 md:p-20 text-white relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-white/5 skew-x-12 transform origin-right hidden md:block" />
-          
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div>
-              <h2 className="text-2xl md:text-5xl font-black mb-4 md:mb-6 leading-tight">Our Hiring <br />Journey</h2>
-              <p className="text-white/60 mb-8 md:mb-10 max-w-md text-sm md:text-base">We believe in a transparent and thorough recruitment process to find the perfect flight path for your career.</p>
-              
-              <div className="space-y-6 md:space-y-8">
-                {steps.map((step, index) => (
-                  <div key={index} className="flex gap-4 md:gap-6 items-start">
-                    <span className="text-3xl md:text-4xl font-black text-accent/30 tracking-tighter">{step.id}</span>
-                    <div>
-                      <h4 className="text-lg md:text-xl font-bold mb-1">{step.title}</h4>
-                      <p className="text-white/50 text-xs md:text-sm leading-relaxed">{step.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="bg-white/5 backdrop-blur-xl rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-10 border border-white/10 text-center mt-4 md:mt-0">
-              <div className="w-16 h-16 md:w-20 md:h-20 bg-accent rounded-full flex items-center justify-center mx-auto mb-6 shadow-2xl shadow-accent/40">
-                <Mail className="text-white w-8 h-8 md:w-10 md:h-10" />
-              </div>
-              <h3 className="text-xl md:text-2xl font-black mb-3 md:mb-4">Spontaneous Application?</h3>
-              <p className="text-white/60 mb-6 md:mb-8 text-sm max-w-xs mx-auto leading-relaxed">Don't see your role? We're always looking for exceptional talent. Send us your CV directly.</p>
-              <a 
-                href="mailto:info@saraaviation.in"
-                className="inline-block w-full bg-white text-primary py-3.5 md:py-4 rounded-full text-sm md:text-base font-bold hover:bg-accent hover:text-white transition-all duration-300"
-              >
-                info@saraaviation.in
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Footer Decoration */}
-      <div className="py-12 md:py-20 text-center border-t border-gray-50">
-        <p className="text-gray-300 text-[10px] md:text-sm uppercase tracking-[0.3em] font-bold">Elevate Your Career • Sara Aviation Academy</p>
+      <div className="py-24 text-center border-t border-slate-100">
+        <p className="text-slate-300 text-[10px] uppercase tracking-[0.4em] font-black">Professional Excellence • IPA Academy</p>
       </div>
     </div>
   );

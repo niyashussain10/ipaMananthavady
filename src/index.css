@@ -8,17 +8,17 @@ html {
   --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-outfit: "Outfit", sans-serif;
   --font-heading: "Saira", sans-serif;
-  --color-primary: #082B4D;
-  --color-navbar: #082B4D;
-  /* 082B4D */
-  /* 2563eb */
-  --color-accent: #f5a425;
+  --color-primary: #002B5B;
+  --color-navbar: #002B5B;
+  --color-accent: #C5A059;
+  --color-gold: #C5A059;
+  --color-navy: #002B5B;
+  --color-slate: #1E293B;
 }
 
 @layer base {
   body {
-    @apply font-sans bg-white text-gray-900;
-    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' style='font-size:24px'><text y='35'>✈️</text></svg>"), auto;
+    @apply font-sans bg-slate-50 text-slate-900;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading;
@@ -31,13 +31,13 @@ html {
 }  
 
 ::-webkit-scrollbar-track {
-  @apply bg-primary/10;
+  @apply bg-slate-100;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-accent rounded-full;
+  @apply bg-gold rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-accent/80;
+  @apply bg-gold/80;
 }

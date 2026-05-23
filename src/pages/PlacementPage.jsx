@@ -1,132 +1,103 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import AirlinePartners from "./home/components/AirlinePartners";
 
-const placeholderImg = "https://i.pinimg.com/736x/5d/c5/ff/5dc5ffbad0d623c3196bf4b55291992d.jpg";
-
-const students = [
-  { id: 1, name: "Aarav Mehtha", airline: "Air India", img: "/assets/Sarah Aviation Placements/Aarav Mehtha.png" },
-  { id: 2, name: "Aazan Khan", airline: "IndiGo", img: "/assets/Sarah Aviation Placements/Aazan Khan.png" },
-  { id: 3, name: "Adithya", airline: "SpiceJet", img: "/assets/Sarah Aviation Placements/Adithya.png" },
-  { id: 4, name: "Aditi", airline: "Vistara", img: "/assets/Sarah Aviation Placements/Aditi.png" },
-  { id: 5, name: "Ananya", airline: "Air India Express", img: "/assets/Sarah Aviation Placements/Ananya.png" },
-  { id: 6, name: "Anjali", airline: "Akasa Air", img: "/assets/Sarah Aviation Placements/Anjali.png" },
-  { id: 7, name: "Evangeline", airline: "Qatar Airways", img: "/assets/Sarah Aviation Placements/Evangeline.png" },
-  { id: 8, name: "Farhan Ahmed", airline: "Emirates", img: "/assets/Sarah Aviation Placements/Farhan Ahmed.png" },
-  { id: 9, name: "Gloria", airline: "Etihad Airways", img: "/assets/Sarah Aviation Placements/Gloria.png" },
-  { id: 10, name: "Karthik", airline: "AirAsia India", img: "/assets/Sarah Aviation Placements/Karthik.png" },
-  { id: 11, name: "Manjunath", airline: "GMR Group", img: "/assets/Sarah Aviation Placements/Manjunath.png" },
-  { id: 12, name: "Meera", airline: "IndiGo", img: "/assets/Sarah Aviation Placements/Meera.png" },
-  { id: 13, name: "Mehek", airline: "Vistara", img: "/assets/Sarah Aviation Placements/Mehek.png" },
-  { id: 14, name: "Neha Kapoor", airline: "Air India", img: "/assets/Sarah Aviation Placements/Neha Kapoor.png" },
-  { id: 15, name: "Nisha", airline: "Akasa Air", img: "/assets/Sarah Aviation Placements/Nisha.png" },
-  { id: 16, name: "Pooja", airline: "IndiGo", img: "/assets/Sarah Aviation Placements/Pooja.png" },
-  { id: 17, name: "Ritu", airline: "Vistara", img: "/assets/Sarah Aviation Placements/Ritu.png" },
-  { id: 18, name: "Rohit", airline: "SpiceJet", img: "/assets/Sarah Aviation Placements/Rohit.png" },
-  { id: 19, name: "Rohit Kumar", airline: "Air India", img: "/assets/Sarah Aviation Placements/Rohit (2).png" },
-  { id: 20, name: "Sachin", airline: "IndiGo", img: "/assets/Sarah Aviation Placements/Sachin.png" },
-  { id: 21, name: "Sandeep", airline: "Vistara", img: "/assets/Sarah Aviation Placements/Sandeep.png" },
-  { id: 22, name: "Shreya", airline: "Qatar Airways", img: "/assets/Sarah Aviation Placements/Shreya.png" },
-  { id: 23, name: "Simran", airline: "Emirates", img: "/assets/Sarah Aviation Placements/Simran.png" },
-  { id: 24, name: "Vikram", airline: "Air India", img: "/assets/Sarah Aviation Placements/Vikram.png" },
+const placements = [
+  { id: 1, name: "Rahul S", role: "Sr. Accountant", company: "Finance Corp" },
+  { id: 2, name: "Sneha P", role: "GST Consultant", company: "Global Tax" },
+  { id: 3, name: "Arjun K", role: "SAP Specialist", company: "Tech Solutions" },
+  { id: 4, name: "Meera R", role: "Audit Associate", company: "Premium Audit" },
+  { id: 5, name: "Kiran J", role: "Finance Manager", company: "Retail Hub" },
+  { id: 6, name: "Anjali M", role: "Tax Analyst", company: "City Accounts" }
 ];
 
 const PlacementPage = () => {
   return (
-    <div className="bg-gray-50 min-h-screen">
+    <div className="bg-slate-50 min-h-screen">
       {/* Header Section */}
-      <section className="pt-48 pb-20 bg-primary text-white text-center px-6">
-        <div className="max-w-4xl mx-auto">
+      <section className="pt-48 pb-20 bg-navy text-white text-center px-8 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-gold rounded-full blur-[120px]" />
+        </div>
+        <div className="max-w-4xl mx-auto relative z-10">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-bold mb-4"
+            className="text-4xl md:text-6xl font-black uppercase tracking-tight mb-4"
           >
-            Placement Success Stories
+            Placement <span className="text-gold">Success</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-white/80 text-lg md:text-xl"
+            className="text-white/70 text-lg md:text-xl font-light"
           >
-            Empowering dreams, one flight at a time. Meet our alumni flying high with leading global airlines.
+            Empowering careers in finance and accounting. Meet our graduates working in top-tier organizations.
           </motion.p>
         </div>
       </section>
 
       {/* Grid Section */}
-      <section className="py-20 container mx-auto px-6 max-w-8xl">
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6 md:gap-8">
-          {students.map((student, index) => (
+      <section className="py-24 container mx-auto px-8 max-w-7xl">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          {placements.map((student, index) => (
             <motion.div
               key={student.id}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: (index % 4) * 0.1 }}
-              className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100"
+              transition={{ delay: index * 0.1 }}
+              className="group bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 border border-slate-100 flex flex-col items-center text-center"
             >
-              {/* Image Container */}
-              <div className="aspect-square overflow-hidden relative bg-gray-50 flex items-center justify-center p-2">
-                <img
-                  src={student.img}
-                  alt={student.name}
-                  className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="w-24 h-24 bg-slate-50 rounded-full flex items-center justify-center mb-6 group-hover:bg-gold transition-colors duration-500">
+                <span className="text-navy text-3xl font-black uppercase">{student.name.charAt(0)}</span>
               </div>
-
-              {/* Info Container */}
-              <div className="p-4 sm:p-5 text-center">
-                <h3 className="font-bold text-gray-900 text-base sm:text-lg group-hover:text-accent transition-colors">
-                  {student.name}
-                </h3>
-                {/*hide airline name in students card if needed*/}
-                <p className="text-accent font-medium text-xs sm:text-sm uppercase tracking-wider mt-1">
-                  {student.airline}
-                </p>
-              </div>
+              <h3 className="text-2xl font-black text-navy uppercase mb-2 group-hover:text-gold transition-colors">
+                {student.name}
+              </h3>
+              <p className="text-gold text-xs font-black uppercase tracking-widest mb-4">
+                {student.role}
+              </p>
+              <div className="w-10 h-1 bg-slate-100 rounded-full mb-4" />
+              <p className="text-slate-500 font-bold text-sm uppercase italic">
+                Placed @ {student.company}
+              </p>
             </motion.div>
           ))}
         </div>
       </section>
 
-      {/* Stats / Call to Action */}
-      <section className="py-20 bg-white text-center px-6 border-t border-gray-100">
-        <div className="max-w-4xl mx-auto space-y-8">
+      {/* CTA */}
+      <section className="py-32 bg-white text-center px-8 border-t border-slate-100 overflow-hidden relative">
+        <div className="max-w-4xl mx-auto space-y-12 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="space-y-4"
+            className="space-y-6"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-primary">
-              You Could Be Next!
+            <h2 className="text-4xl md:text-6xl font-black text-navy uppercase tracking-tighter leading-none">
+              Your Professional <br/>Career <span className="text-gold italic underline decoration-navy decoration-4 underline-offset-8">Starts Here</span>
             </h2>
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-              Start your journey with Sara Aviation Academy today and join the elite league of aviation professionals.
+            <p className="text-slate-500 text-lg max-w-2xl mx-auto font-light">
+              Don't just learn accounting. Get trained on-the-job and join our elite league of professional accountants.
             </p>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             <Link
               to="/contact"
-              className="inline-block bg-accent text-white px-10 py-4 rounded-full text-lg font-bold hover:bg-accent/90 transition shadow-xl shadow-accent/30"
+              className="inline-block bg-navy text-white px-12 py-5 rounded-full text-sm font-black uppercase tracking-[0.2em] hover:bg-gold hover:text-navy transition-all shadow-2xl shadow-navy/20"
             >
-              Join Now
+              Register For Placement Support
             </Link>
           </motion.div>
         </div>
       </section>
-      <AirlinePartners title="Our Placement partners" />
     </div>
   );
 };

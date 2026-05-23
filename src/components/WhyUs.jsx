@@ -1,31 +1,29 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import chooseImage01 from '../assets/images/choose-us-image-01.png';
-import chooseImage02 from '../assets/images/choose-us-image-02.png';
-import chooseImage03 from '../assets/images/choose-us-image-03.png';
-import bgImage from '../assets/images/choosing-bg.jpg';
+
+const placeholderImg = "https://i.pinimg.com/736x/14/a1/88/14a188950a021ac3b9ec74d75b1c884c.jpg";
 
 const tabs = [
   {
-    id: 'best-education',
-    label: 'Best Education',
-    title: 'Best Education',
-    image: chooseImage01,
-    content: 'Sara Aviation is a premier educational platform for aviation management and training. Feel free to use it for educational or commercial purposes.'
+    id: 'practical-training',
+    label: 'Practical Training',
+    title: '100% Hands-on Experience',
+    image: placeholderImg,
+    content: 'At IPA Kerala, we believe in "Training, not Teaching". Our curriculum is built around real-world accounting scenarios, ensuring you master Tally, SAP, and GST filing through practical projects rather than just theory.'
   },
   {
-    id: 'top-management',
-    label: 'Top Management',
-    title: 'Top Level',
-    image: chooseImage02,
-    content: 'You can modify this HTML layout by editing contents and adding more pages as you needed. Since this template has options to add dropdown menus, you can put many HTML pages. Suspendisse tincidunt, magna ut finibus rutrum, libero dolor euismod odio, nec interdum quam felis non ante.'
+    id: 'expert-faculties',
+    label: 'Expert Faculties',
+    title: 'Learn from Professionals',
+    image: placeholderImg,
+    content: 'Our instructors include Chartered Accountants, Tax Consultants, and industry veterans with decades of experience. You gain insights into current corporate requirements and best practices directly from those working in the field.'
   },
   {
-    id: 'quality-meeting',
-    label: 'Quality Meeting',
-    title: 'Quality Meeting',
-    image: chooseImage03,
-    content: 'You are NOT allowed to redistribute this template ZIP file on any template collection website. However, you can use this template to convert into a specific theme for any kind of CMS platform such as WordPress. For more information, you shall contact TemplateMo now.'
+    id: 'placement-success',
+    label: 'Placement Success',
+    title: 'Global Career Support',
+    image: placeholderImg,
+    content: 'With a vast network of corporate partners across India and the Gulf, our dedicated placement cell helps you secure high-paying roles as Accountants, SAP Consultants, or Financial Auditors immediately after certification.'
   }
 ];
 
@@ -33,44 +31,43 @@ const WhyUs = () => {
   const [activeTab, setActiveTab] = useState(tabs[0]);
 
   return (
-    <section 
-      id="section2" 
-      className="relative py-24 bg-primary bg-cover bg-no-repeat bg-fixed"
-      style={{ backgroundImage: `url(${bgImage})` }}
-    >
-      {/* Overlay to ensure readability */}
-      <div className="absolute inset-0 bg-primary/90 pointer-events-none" />
+    <section className="relative py-32 bg-navy overflow-hidden">
+      {/* Background Orbs */}
+      <div className="absolute inset-0 opacity-10 pointer-events-none">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gold rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gold rounded-full blur-[120px]" />
+      </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
+      <div className="container mx-auto px-8 relative z-10">
+        <div className="text-center mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-block border-2 border-white/10 px-6 py-4"
+            className="inline-block border border-gold/30 px-8 py-4 rounded-full"
           >
-            <h2 className="text-white text-xl font-bold uppercase tracking-wider">
-              Why choose Sara Aviation?
+            <h2 className="text-gold text-sm font-black uppercase tracking-[0.4em]">
+              Why choose IPA Kerala?
             </h2>
           </motion.div>
         </div>
 
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           {/* Tabs Navigation */}
-          <div className="flex flex-col md:flex-row justify-center items-center gap-0 md:gap-10 border-b border-white/10 mb-12">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-0 md:gap-12 border-b border-white/5 mb-16">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab)}
-                className={`relative pb-8 text-sm font-black uppercase tracking-widest transition-colors duration-300 w-full md:w-auto ${
-                  activeTab.id === tab.id ? 'text-accent' : 'text-white'
+                className={`relative pb-8 text-[11px] font-black uppercase tracking-[0.25em] transition-all duration-300 w-full md:w-auto ${
+                  activeTab.id === tab.id ? 'text-gold' : 'text-white/40 hover:text-white'
                 }`}
               >
                 {tab.label}
                 {activeTab.id === tab.id && (
                   <motion.div 
-                    layoutId="activeTab"
-                    className="absolute bottom-0 left-1/2 -translate-x-1/2 w-10 md:w-16 h-1 bg-accent"
+                    layoutId="activeTabUnderline"
+                    className="absolute bottom-0 left-0 right-0 h-1 bg-gold rounded-t-full shadow-[0_-4px_20px_rgba(197,160,89,0.5)]"
                   />
                 )}
               </button>
@@ -78,30 +75,39 @@ const WhyUs = () => {
           </div>
 
           {/* Tabs Content */}
-          <div className="min-h-[400px]">
+          <div className="min-h-[450px]">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeTab.id}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.4 }}
-                className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -30 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+                className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center"
               >
-                <div className="overflow-hidden rounded-2xl shadow-2xl">
-                  <img 
-                    src={activeTab.image} 
-                    alt={activeTab.title} 
-                    className="w-full h-auto object-cover"
-                  />
+                <div className="relative group">
+                  <div className="overflow-hidden rounded-[3rem] shadow-2xl border border-white/10 group-hover:border-gold/20 transition-all duration-500">
+                    <img 
+                      src={activeTab.image} 
+                      alt={activeTab.title} 
+                      className="w-full h-auto object-cover opacity-90 group-hover:scale-105 transition-transform duration-700"
+                    />
+                  </div>
+                  <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-gold rounded-[2.5rem] -z-10 blur-2xl opacity-20" />
                 </div>
-                <div className="text-left space-y-6">
-                  <h4 className="text-3xl font-black text-white italic uppercase tracking-tight">
+                <div className="text-left space-y-8">
+                  <h4 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter italic leading-none">
                     {activeTab.title}
                   </h4>
-                  <p className="text-white/80 text-base leading-relaxed font-medium">
+                  <p className="text-white/60 text-lg leading-relaxed font-light">
                     {activeTab.content}
                   </p>
+                  <div className="pt-6">
+                    <button className="text-gold font-black uppercase tracking-widest text-[10px] flex items-center gap-3 group">
+                      Learn More About Our Methodology
+                      <div className="w-8 h-px bg-gold group-hover:w-16 transition-all duration-300" />
+                    </button>
+                  </div>
                 </div>
               </motion.div>
             </AnimatePresence>

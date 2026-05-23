@@ -1,33 +1,32 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Plane, Users, ShieldCheck } from 'lucide-react';
+import { Briefcase, GraduationCap, Network, ChevronRight } from 'lucide-react';
 
 const features = [
   {
-    icon: <Users size={24} />,
-    title: "Cabin Crew",
-    description: "Master the art of in-flight hospitality and safety with our world-class cabin crew certification courses.",
-    link: "/courses",
-    color: "bg-accent"
+    icon: <Briefcase size={28} />,
+    title: "On-the-Job Training",
+    description: "Equip yourself with practical skills through hands-on experience in real-world accounting scenarios.",
+    link: "/about"
   },
   {
-    icon: <ShieldCheck size={24} />,
-    title: "Ground Staff",
-    description: "Expert training in airport management, ground handling, and technical support services.",
-    link: "/courses"
+    icon: <GraduationCap size={28} />,
+    title: "Expert Mentorship",
+    description: "Benefit from close collaboration with Chartered Accountants and industry professionals.",
+    link: "/team"
   },
   {
-    icon: <Plane size={24} />,
-    title: "Pilot Training",
-    description: "Launch your career in the skies with our comprehensive Commercial Pilot License (CPL) training programs.",
-    link: "/courses"
+    icon: <Network size={28} />,
+    title: "Industry Network",
+    description: "Access a global network of corporate connections for internships and job placement assistance.",
+    link: "/contact"
   }
 ];
 
 const Features = () => {
   return (
-    <section className="bg-[#082B4D] -mt-px relative z-30">
-      <div className="container mx-auto px-0 md:px-6">
+    <section className="bg-navy relative z-30">
+      <div className="container mx-auto px-0 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3">
           {features.map((feature, index) => (
             <motion.div
@@ -35,29 +34,34 @@ const Features = () => {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.2, duration: 0.5 }}
-              className="relative group overflow-hidden"
+              transition={{ delay: index * 0.1, duration: 0.6, ease: "easeOut" }}
+              className="relative group border-r border-white/5 last:border-r-0"
             >
-              <div className="bg-[#0c1228] p-10 md:p-12 h-full border-l border-white/5 transition-all duration-500 group-hover:bg-accent group-hover:shadow-[0_0_50px_rgba(0,0,0,0.5)]">
-                <div className="flex flex-col gap-6">
-                  <div className="flex items-center gap-4">
-                    <span className="text-white group-hover:scale-110 transition-transform duration-300">
-                      {feature.icon}
-                    </span>
-                    <h4 className="text-white text-lg font-bold uppercase tracking-wider">
-                      {feature.title}
-                    </h4>
+              <div className="bg-navy/50 p-12 lg:p-16 h-full transition-all duration-700 group-hover:bg-gold relative overflow-hidden">
+                {/* Decorative Pattern */}
+                <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-bl-full -translate-y-12 translate-x-12 group-hover:bg-navy/10 transition-colors" />
+                
+                <div className="flex flex-col gap-8 relative z-10">
+                  <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center text-gold group-hover:bg-navy group-hover:text-gold transition-all duration-500 shadow-xl">
+                    {feature.icon}
                   </div>
                   
                   <div className="space-y-4">
-                    <p className="text-white/70 group-hover:text-white transition-colors duration-300 text-sm leading-relaxed">
+                    <h4 className="text-white text-2xl font-black uppercase tracking-tighter group-hover:text-navy transition-colors">
+                      {feature.title}
+                    </h4>
+                    <p className="text-white/60 group-hover:text-navy/70 transition-colors duration-500 text-sm leading-relaxed font-light">
                       {feature.description}
                     </p>
+                  </div>
+
+                  <div className="pt-4">
                     <a 
                       href={feature.link}
-                      className="inline-block text-white text-sm font-bold uppercase tracking-wide border-b-2 border-white pb-1 hover:pb-2 transition-all"
+                      className="inline-flex items-center gap-2 text-gold group-hover:text-navy text-[10px] font-black uppercase tracking-widest border-b border-gold group-hover:border-navy pb-1 transition-all"
                     >
                       Learn More
+                      <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
                     </a>
                   </div>
                 </div>
