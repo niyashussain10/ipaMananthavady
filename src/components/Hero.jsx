@@ -4,9 +4,9 @@ import { ChevronRight, Calculator, Award, GraduationCap } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-navy">
+    <section className="relative min-h-[calc(100vh-80px)] md:min-h-screen flex items-center pt-28 pb-16 md:py-20 bg-navy">
       {/* Dynamic Background */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/90 to-transparent z-10" />
         <img 
           src="/hero_bg.png" 
@@ -24,7 +24,7 @@ const Hero = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-10"
+            className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6 md:mb-10"
           >
             <Award className="text-gold w-5 h-5" />
             <span className="text-white text-xs font-black uppercase tracking-[0.3em]">ISO 9001:2015 Certified Institute</span>
@@ -35,7 +35,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-8xl font-black text-white leading-[1.05] uppercase tracking-tighter mb-10 break-words"
+            className="text-4xl sm:text-5xl md:text-8xl font-black text-white leading-[1.05] uppercase tracking-tighter mb-6 md:mb-10 break-words"
           >
             Become a Professional <br/>
             <span className="text-gold italic underline decoration-white/10 underline-offset-[20px]">Accountant</span>
@@ -46,9 +46,9 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="flex flex-col md:flex-row md:items-center gap-8 mb-12"
+            className="flex flex-col md:flex-row md:items-center gap-6 md:gap-8 mb-8 md:mb-12"
           >
-            <p className="text-white/60 text-lg md:text-2xl font-light leading-relaxed max-w-xl">
+            <p className="text-white/60 text-base md:text-2xl font-light leading-relaxed max-w-xl">
               Equip yourself with practical skills and work anywhere in the world. MIAM is your <span className="text-gold font-black italic">PASSPORT</span> to a bright future!
             </p>
             <div className="hidden md:block w-px h-16 bg-white/10" />
@@ -63,18 +63,18 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="flex flex-wrap gap-6"
+            className="flex flex-col sm:flex-row sm:flex-wrap gap-4 md:gap-6"
           >
             <a 
               href="/courses"
-              className="px-10 py-5 bg-gold text-navy rounded-2xl text-xs font-black uppercase tracking-[0.2em] hover:bg-white transition-all shadow-2xl flex items-center gap-3 group"
+              className="px-6 py-4 md:px-10 md:py-5 bg-gold text-navy rounded-xl md:rounded-2xl text-xs font-black uppercase tracking-[0.2em] hover:bg-white transition-all shadow-2xl flex items-center justify-center gap-3 group"
             >
               Explore Courses
               <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
             <a 
               href="/contact"
-              className="px-10 py-5 bg-white/5 text-white border border-white/20 rounded-2xl text-xs font-black uppercase tracking-[0.2em] hover:bg-white/10 transition-all backdrop-blur-sm flex items-center gap-3"
+              className="px-6 py-4 md:px-10 md:py-5 bg-white/5 text-white border border-white/20 rounded-xl md:rounded-2xl text-xs font-black uppercase tracking-[0.2em] hover:bg-white/10 transition-all backdrop-blur-sm flex items-center justify-center gap-3"
             >
               Contact Branches
               <div className="w-2 h-2 bg-gold rounded-full" />
