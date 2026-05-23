@@ -30,17 +30,17 @@ const certifications = [
 const AboutPage = () => (
   <div className="bg-slate-50 min-h-screen">
     {/* Hero Section */}
-    <section className="bg-navy pt-48 pb-24 relative overflow-hidden">
+    <section className="bg-navy pt-28 md:pt-48 pb-16 md:pb-24 relative overflow-hidden">
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 right-0 w-96 h-96 bg-gold rounded-full blur-[120px]" />
       </div>
-      <div className="container mx-auto px-8 relative z-10 text-center">
+      <div className="container mx-auto px-4 md:px-8 relative z-10 text-center">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
         >
           <span className="text-gold text-sm font-black uppercase tracking-[0.3em] mb-4 block">Est. 2002</span>
-          <h1 className="text-white text-4xl md:text-7xl font-black uppercase tracking-tight mb-6 leading-none">
+          <h1 className="text-white text-3xl md:text-7xl font-black uppercase tracking-tight mb-6 leading-none">
             Welcome to <span className="text-gold italic">IPA Kerala</span>
           </h1>
           <p className="text-white/60 max-w-2xl mx-auto text-lg font-light leading-relaxed">

@@ -163,18 +163,18 @@ const CoursesPage = () => {
   return (
     <div className="bg-slate-50 min-h-screen">
       {/* Hero Section */}
-      <section className="bg-navy pt-48 pb-24 relative overflow-hidden">
+      <section className="bg-navy pt-32 md:pt-48 pb-16 md:pb-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-96 h-96 bg-gold rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl" />
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-gold rounded-full translate-x-1/2 translate-y-1/2 blur-3xl" />
         </div>
-        <div className="container mx-auto px-8 relative z-10 text-center">
+        <div className="container mx-auto px-4 md:px-8 relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
           >
             <span className="text-gold text-sm font-black uppercase tracking-[0.3em] mb-4 block">IPA MANANTHAVADY</span>
-            <h1 className="text-white text-4xl md:text-6xl font-black uppercase tracking-tight mb-6">
+            <h1 className="text-white text-3xl md:text-6xl font-black uppercase tracking-tight mb-6">
               Our Professional <span className="text-gold italic">Courses</span>
             </h1>
             <p className="text-white/70 max-w-2xl mx-auto mb-10 text-lg font-light leading-relaxed">
@@ -304,11 +304,11 @@ const CoursesPage = () => {
       </div>
 
       {/* Practice Highlights */}
-      <div className="container mx-auto px-8 pb-24">
-        <section className="bg-navy rounded-[3rem] p-12 md:p-20 text-white relative overflow-hidden">
+      <div className="container mx-auto px-4 md:px-8 pb-14 md:pb-24">
+        <section className="bg-navy rounded-[2rem] md:rounded-[3rem] p-8 md:p-20 text-white relative overflow-hidden">
           <div className="absolute top-0 right-0 w-1/2 h-full bg-gold/5 -skew-x-12 transform origin-top-right" />
           <div className="relative z-10">
-            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-12">
+            <h2 className="text-2xl md:text-5xl font-black uppercase tracking-tighter mb-8 md:mb-12">
               DO Accounting <span className="text-gold italic">Practice</span>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -333,7 +333,7 @@ const CoursesPage = () => {
         </section>
 
         {/* Specialized Training Grid */}
-        <section className="mt-32">
+        <section className="mt-16 md:mt-32">
           <div className="text-center mb-16">
             <h6 className="text-gold text-sm font-black uppercase tracking-[4px] mb-4">Certifications</h6>
             <h2 className="text-navy text-4xl font-black uppercase tracking-tight">Specialized Skillsets</h2>

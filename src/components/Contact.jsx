@@ -123,7 +123,7 @@ const Contact = () => {
   return (
     <section className="bg-white">
       {/* Hero Header */}
-      <div className="bg-navy pt-60 pb-24 md:pb-32 px-8 text-center relative overflow-hidden">
+      <div className="bg-navy pt-36 md:pt-60 pb-20 md:pb-32 px-4 md:px-8 text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 right-10 w-96 h-96 bg-gold rounded-full blur-[120px]" />
           <div className="absolute bottom-0 left-10 w-96 h-96 bg-gold rounded-full blur-[120px]" />
@@ -140,7 +140,7 @@ const Contact = () => {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-white text-5xl md:text-7xl font-black uppercase tracking-tighter mb-6 leading-none"
+            className="text-white text-4xl md:text-7xl font-black uppercase tracking-tighter mb-6 leading-none"
           >
             Get In <span className="text-gold italic underline decoration-white/10 underline-offset-[16px]">Touch</span>
           </motion.h1>
@@ -151,8 +151,8 @@ const Contact = () => {
       </div>
 
       {/* Info Cards */}
-      <div className="container mx-auto px-8 -mt-16 relative z-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div className="container mx-auto px-4 md:px-8 -mt-10 md:-mt-16 relative z-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 max-w-6xl mx-auto">
           {contactInfo.map((info, index) => (
             <motion.a
               key={index}
@@ -161,9 +161,9 @@ const Contact = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white p-10 rounded-[2.5rem] shadow-2xl hover:shadow-gold/10 transition-all duration-500 border border-slate-100 flex flex-col items-center text-center group"
+              className="bg-white p-6 md:p-10 rounded-[2rem] md:rounded-[2.5rem] shadow-2xl hover:shadow-gold/10 transition-all duration-500 border border-slate-100 flex flex-col items-center text-center group"
             >
-              <div className={`w-16 h-16 ${info.color} text-white rounded-2xl flex items-center justify-center mb-8 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+              <div className={`w-12 h-12 md:w-16 md:h-16 ${info.color} text-white rounded-2xl flex items-center justify-center mb-4 md:mb-8 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                 {info.icon}
               </div>
               <h3 className="text-slate-400 text-[10px] font-black uppercase tracking-widest mb-3">{info.title}</h3>
@@ -175,15 +175,15 @@ const Contact = () => {
       </div>
 
       {/* Contact Content */}
-      <div className="container mx-auto px-8 py-32 relative z-20">
-        <div className="grid lg:grid-cols-12 gap-20 items-start">
+      <div className="container mx-auto px-4 md:px-8 py-14 md:py-32 relative z-20">
+        <div className="grid lg:grid-cols-12 gap-10 md:gap-20 items-start">
 
           {/* Form Side */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-7 bg-white rounded-[3rem] p-12 md:p-16 shadow-2xl border border-slate-100"
+            className="lg:col-span-7 bg-white rounded-[2rem] md:rounded-[3rem] p-6 sm:p-10 md:p-16 shadow-2xl border border-slate-100"
           >
             <AnimatePresence mode="wait">
               {showSuccess ? (
@@ -289,12 +289,12 @@ const Contact = () => {
               className="space-y-10"
             >
               <div>
-                <h3 className="text-3xl font-black text-navy mb-12 flex items-center gap-4 uppercase tracking-tighter">
+                <h3 className="text-2xl md:text-3xl font-black text-navy mb-6 md:mb-12 flex items-center gap-4 uppercase tracking-tighter">
                   <Navigation className="text-gold" /> Our Chapters
                 </h3>
-                <div className="space-y-4 max-h-[800px] overflow-y-auto pr-4 scrollbar-thin scrollbar-thumb-gold/20">
+                <div className="space-y-4 max-h-[60vh] md:max-h-[800px] overflow-y-auto pr-2 md:pr-4 scrollbar-thin scrollbar-thumb-gold/20">
                   {branches.map((branch, idx) => (
-                    <div key={idx} className="group p-8 rounded-3xl bg-slate-50 hover:bg-navy transition-all duration-500 border border-slate-100 hover:border-navy">
+                    <div key={idx} className="group p-5 md:p-8 rounded-3xl bg-slate-50 hover:bg-navy transition-all duration-500 border border-slate-100 hover:border-navy">
                       <h4 className="text-gold text-xs font-black tracking-widest uppercase mb-4 group-hover:text-gold">{branch.name}</h4>
                       <p className="text-slate-500 text-sm leading-relaxed mb-6 group-hover:text-white/60 font-medium">{branch.address}</p>
                       <div className="flex items-center justify-between">
@@ -314,7 +314,7 @@ const Contact = () => {
       </div>
 
       {/* Map Section */}
-      <div className="border-t border-slate-100 bg-slate-50 py-24 px-8">
+      <div className="border-t border-slate-100 bg-slate-50 py-12 md:py-24 px-4 md:px-8">
         <div className="container mx-auto max-w-6xl">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
@@ -328,7 +328,7 @@ const Contact = () => {
               <div className="w-20 h-1.5 bg-gold rounded-full mt-4 mx-auto md:mx-0" />
             </div>
             
-            <div className="w-full h-[450px] rounded-[2.5rem] overflow-hidden shadow-2xl border border-slate-100 relative bg-white p-3">
+            <div className="w-full h-[260px] sm:h-[350px] md:h-[450px] rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl border border-slate-100 relative bg-white p-2 md:p-3">
               <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7811.151829168344!2d76.00176275522055!3d11.794881433253764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba5df0072fb7dcf%3A0x7d68406aa12668b1!2sDXD%20FITNESS!5e0!3m2!1sen!2sin!4v1779542893487!5m2!1sen!2sin" 
                 width="100%" 
