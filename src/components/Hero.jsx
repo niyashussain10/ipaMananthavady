@@ -49,7 +49,7 @@ const Hero = () => {
             className="flex flex-col md:flex-row md:items-center gap-6 md:gap-8 mb-8 md:mb-12"
           >
             <p className="text-white/60 text-base md:text-2xl font-light leading-relaxed max-w-xl">
-              Equip yourself with practical skills and work anywhere in the world. MIAM is your <span className="text-gold font-black italic">PASSPORT</span> to a bright future!
+              Equip yourself with practical accounting skills and work anywhere in the world. IPA is your <span className="text-gold font-black italic">PASSPORT</span> to a successful career!
             </p>
             <div className="hidden md:block w-px h-16 bg-white/10" />
             <div className="flex flex-col gap-1">

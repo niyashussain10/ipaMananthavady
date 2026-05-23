@@ -91,7 +91,7 @@ const Contact = () => {
     name: '',
     email: '',
     phone: '',
-    subject: 'MIAM Course',
+    subject: 'IPA Course',
     message: ''
   });
 
