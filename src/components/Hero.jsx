@@ -35,7 +35,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-5xl md:text-8xl font-black text-white leading-[1.05] uppercase tracking-tighter mb-10"
+            className="text-4xl sm:text-5xl md:text-8xl font-black text-white leading-[1.05] uppercase tracking-tighter mb-10 break-words"
           >
             Become a Professional <br/>
             <span className="text-gold italic underline decoration-white/10 underline-offset-[20px]">Accountant</span>
