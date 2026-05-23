@@ -145,7 +145,7 @@ const Contact = () => {
             Get In <span className="text-gold italic underline decoration-white/10 underline-offset-[16px]">Touch</span>
           </motion.h1>
           <p className="text-white/60 text-lg max-w-2xl mx-auto font-light leading-relaxed">
-            With 20+ years of excellence and a wide network of branches, we are always close to help you build your career.
+            With 20+ years of excellence and  a wide network of branches, we are always close to help you build your career.
           </p>
         </div>
       </div>
